@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-display: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html, body, #root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #07090e;
+    color: #e2e8f0;
+    font-family: var(--font-sans);
+    user-select: none;
+    -webkit-user-select: none;
+  }
+}
+
+/* Soporte táctil estricto para mobile y tablets (Fase 14) */
+.canvas-container,
+.canvas-container canvas,
+.transform-handle {
+  touch-action: none !important;
+  -webkit-touch-callout: none !important;
+  overscroll-behavior: none !important;
+  user-select: none !important;
+}
+
+/* Custom canvas gradient backdrop */
+.studio-canvas-backdrop {
+  background: radial-gradient(circle at 50% 45%, #182030 0%, #0d121c 55%, #06080d 100%);
+}
